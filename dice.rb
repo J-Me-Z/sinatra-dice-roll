@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
+require "better_errors"
+require "binding_of_caller"
 
 get("/") do
   "Hello World"
