@@ -1,11 +1,21 @@
+
+<!-- /views/wrapper.erb -->
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Dice Roll</title>
+
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 
 <body>
-  <div>
+  <div class="navbar">
     <div><a href="/">Home</a></div>
     <div><a href="/dice/2/6">2d6</a></div>
     <div><a href="/dice/2/10">2d10</a></div>
@@ -13,7 +23,7 @@
     <div><a href="/dice/5/4">4d5</a></div>
   </div>
 
-  <!-- This is the part that is not the same across all actions-->
-	
+  <%= yield %>
+
 </body>
 </html>

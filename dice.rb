@@ -31,7 +31,7 @@ get("/dice/2/6") do
 	
   @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 	
-erb(:two_six)
+erb(:two_six, {:layout => :wrapper})
   # "<h1>2d6</h1>
   #  <p>#{outcome}</p>"
 end
@@ -42,9 +42,11 @@ get("/dice/2/10") do
   sum = first_die + second_die
 	
   outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+
+  erb(:two_six, {:layout => :wrapper})
 	
-  "<h1>2d10</h1>
-   <p>#{outcome}</p>"
+  # "<h1>2d10</h1>
+  #  <p>#{outcome}</p>"
 end
 
 get("/dice/1/20") do
@@ -54,9 +56,11 @@ get("/dice/1/20") do
 	
   outcome = "You rolled a #{first_die}."
  # and a {second_die} for a total of #{sum}."
+
+ erb(:two_six, {:layout => :wrapper})
 	
-  "<h1>1d20</h1>
-   <p>#{outcome}</p>"
+  # "<h1>1d20</h1>
+  #  <p>#{outcome}</p>"
 end
 
 get("/dice/5/4") do
@@ -68,7 +72,10 @@ get("/dice/5/4") do
   sum = first_die + second_die + third_die + fourth_die + fifth_die
 	
   outcome = "You rolled a #{first_die} and a #{second_die}  and a #{third_die} and a #{fourth_die} and a #{fifth_die} for a total of #{sum}."
+
+  erb(:two_six, {:layout => :wrapper})
+
 	
-  "<h1>5d4</h1>
-   <p>#{outcome}</p>"
+  # "<h1>5d4</h1>
+  #  <p>#{outcome}</p>"
 end
