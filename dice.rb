@@ -24,12 +24,21 @@ get("/giraffe") do
   "Hopefully this shows up without having to restart the server"
 end
 
-get("/dice/2/6") do
-  first_die = rand(1..6)
-  second_die = rand(1..6)
-  sum = first_die + second_die
+# get("/dice/2/6") do
+#   first_die = rand(1..6)
+#   second_die = rand(1..6)
+#   sum = first_die + second_die
 	
-  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+#   @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+
+get("/dice/2/6") do
+  @rolls = []
+
+  2.times do
+    die = rand(1..6)
+
+    @rolls.push(die)
+  end
 	
 erb(:two_six, {:layout => :wrapper})
   # "<h1>2d6</h1>
@@ -89,5 +98,5 @@ get("/dice/100/6") do
     @rolls.push(die)
   end
 
-  erb(:one_hundred_six)
+  erb(:one_hundred_six, {:layout => :wrapper})
 end
